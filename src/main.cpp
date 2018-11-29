@@ -1,6 +1,7 @@
-#include <iostream>
+#include <shoot_app.hpp>
 
 int main()
 {
-    std::cout << "shoot-app-cli\n";
+    Shoot_app app {};
+    return app.run();
 }
