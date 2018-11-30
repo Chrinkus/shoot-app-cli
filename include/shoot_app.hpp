@@ -2,7 +2,6 @@
 #define SHOOT_APP_H
 
 #include <memory>
-#include <view.hpp>
 #include <controller.hpp>
 
 class Shoot_app {
@@ -11,7 +10,6 @@ public:
 
     int run();
 private:
-    std::unique_ptr<View> view;
     std::unique_ptr<Controller> ctrl;
 };
 

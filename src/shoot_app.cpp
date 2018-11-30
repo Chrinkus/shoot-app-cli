@@ -1,8 +1,7 @@
 #include <shoot_app.hpp>
 
 Shoot_app::Shoot_app()
-    : view{std::make_unique<View>()}
-    , ctrl{std::make_unique<Controller>(*view)}
+    : ctrl{std::make_unique<Controller>()}
 {
     //
 }

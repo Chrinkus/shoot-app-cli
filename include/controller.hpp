@@ -1,23 +1,24 @@
-#ifndef SA_CONTROLLER_H
-#define SA_CONTROLLER_H
+#ifndef CLI_CONTROLLER_H
+#define CLI_CONTROLLER_H
 
 #include <iostream>
-#include <functional>
+#include <memory>
 #include <view.hpp>
 
 class Controller {
 public:
-    Controller(const View& v, std::istream& i = std::cin)
-        : view{v}, is{i} { }
+    explicit Controller(std::istream& i = std::cin);
 
     void get_command() const;
 
+    void set_prompt(std::string s) { prompt = std::move(s); }
+
 private:
-    const View& view;
     std::istream& is;
+    std::unique_ptr<View> view;
     std::string prompt = "> ";
 
     void exec(const std::string& s) const;
 };
 
-#endif // SA_CONTROLLER_H
+#endif // CLI_CONTROLLER_H
