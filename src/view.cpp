@@ -1,9 +1,9 @@
 #include <view.hpp>
 
-View::View(std::ostream& o, std::string s)
-    : os{o}, prompt{s} { }
+View::View(std::ostream& o)
+    : os{o} { }
 
-void View::print_message(const std::string& s)
+void View::print_message(const std::string& s) const
 {
-    os << (s.empty() ? prompt : s);
+    os << s;
 }

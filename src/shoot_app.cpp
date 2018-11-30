@@ -2,9 +2,9 @@
 
 Shoot_app::Shoot_app()
     : view{std::make_unique<View>()}
-    , ctrl{std::make_unique<Controller>()}
+    , ctrl{std::make_unique<Controller>(*view)}
 {
-    ctrl->connect_view(view.get());
+    //
 }
 
 int Shoot_app::run()

@@ -6,8 +6,7 @@
 
 TEST_CASE("View inserts default string into stream", "[View]") {
     std::stringstream ss;
-    std::string p {"$ "};
-    View view {ss, p};
-    view.print_message();
-    REQUIRE(ss.str() == p);
+    View view {ss};
+    view.print_message("Hello");
+    REQUIRE(ss.str() == "Hello");
 }

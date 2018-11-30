@@ -5,12 +5,11 @@
 
 class View {
 public:
-    View(std::ostream& o = std::cout, std::string s = "> ");
+    explicit View(std::ostream& o = std::cout);
 
-    void print_message(const std::string& s = "");
+    void print_message(const std::string& s) const;
 private:
     std::ostream& os;
-    std::string prompt;
 };
 
 #endif // SA_VIEW_H

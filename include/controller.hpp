@@ -7,14 +7,15 @@
 
 class Controller {
 public:
-    Controller(std::istream& i = std::cin) : is{i} { }
+    Controller(const View& v, std::istream& i = std::cin)
+        : view{v}, is{i} { }
 
     void get_command() const;
-    void connect_view(View* v) { view = v; }
 
 private:
+    const View& view;
     std::istream& is;
-    View* view;
+    std::string prompt = "> ";
 
     void exec(const std::string& s) const;
 };

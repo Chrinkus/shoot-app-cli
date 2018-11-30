@@ -2,7 +2,7 @@
 
 void Controller::get_command() const
 {
-    view->print_message(std::string{});
+    view.print_message(prompt);
     std::string input;
     std::getline(is, input);
 
@@ -11,6 +11,6 @@ void Controller::get_command() const
 
 void Controller::exec(const std::string& s) const
 {
-    view->print_message("Command: " + s + " received\n");
+    view.print_message("Command: " + s + " received\n");
 }
 
