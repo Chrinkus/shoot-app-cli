@@ -9,6 +9,8 @@ public:
     Shoot_app();
 
     int run();
+
+    static void print_hey() { std::cout << "hey~!\n"; }
 private:
     std::unique_ptr<Controller> ctrl;
 };
